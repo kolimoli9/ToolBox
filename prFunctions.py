@@ -88,10 +88,10 @@ def SaftyCheck():
                         sus=serializer()   
                     i+=1
 
-        except:print('THERE ARE NO MORE SUSPICIOUS PROGRAMS RUNING IN THE BACKGROUND');return
+        except:print('THERE ARE NO MORE SUSPICIOUS PROGRAMS RUNING IN THE BACKGROUND')
         
         if action=='2':
-            return
+            return '\n---Aborted---'
         
 
 

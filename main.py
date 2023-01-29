@@ -1,6 +1,7 @@
+
 from chill import *
 from prFunctions import *
-from vault import safeKeeping, showVault
+from vault import safeKeeping, showVault,AV
 import os
 import psutil
 from datetime import datetime, timezone
@@ -10,14 +11,16 @@ menu = """
     ||          ||
     || Tool Box ||
     ______________
-
+==============================
     Choose Your Action : 
         1) Malware Check 
         2) Netflix & Chill
         3) CMD
         V) Vault
-        S ) Save
-        """
+S) Save
+==============================
+
+"""
 
 
 
@@ -29,11 +32,13 @@ menu = """
 def mainLoop():
     createRecords()
     while True:
+        os.system('cls')
         print(f'\n CPU: {psutil.cpu_percent(4)}% || RAM: {psutil.virtual_memory()[2]}%')
         action = input(menu)
         if action == '1':
             SaftyCheck()
             os.system('cls')
+            continue
         if action == '2':
             mv=WhatToWatch()
             if mv==False:mv=True
@@ -44,8 +49,11 @@ def mainLoop():
         if action =='s':
             response=safeKeeping()
             print(response)
+            continue
         if action =='v':
-            showVault()
+            vault=showVault()
+            if len(vault)>0:
+                AV(vault)
         
         else:return 
 
