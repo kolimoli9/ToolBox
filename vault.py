@@ -42,7 +42,7 @@ def login():
     pwd=input('Password: ')
     os.system('cls')
     r = requests.post('http://toolbox-sr.azurewebsites.net/login/', json={
-        "username":'kolimoli9',
+        "username":'*****',
         "password":pwd
             })
     data=r.json()
