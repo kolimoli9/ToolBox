@@ -41,7 +41,7 @@ def AV(vault):
 def login():
     pwd=input('Password: ')
     os.system('cls')
-    r = requests.post('http://toolbox-sr.azurewebsites.net/login/', json={
+    r = requests.post('get your own server', json={
         "username":'*****',
         "password":pwd
             })
@@ -56,7 +56,7 @@ def safeKeeping():
         desc = input('Description: (/leave blank) \n')
         if desc=='':
             desc='None was given'
-        r = requests.post('http://toolbox-sr.azurewebsites.net/add/', json={
+        r = requests.post('get your own server', json={
         "text": text,
         "time": time,
         "desc":desc
@@ -66,7 +66,7 @@ def safeKeeping():
 def showVault():
     token =login()
     if type(token)==str:
-        r = requests.get('http://toolbox-sr.azurewebsites.net/withdraw/',headers={'Authorization': f'Bearer {token}' })
+        r = requests.get('get your own server',headers={'Authorization': f'Bearer {token}' })
         data=r.json()
         i=1
         vault=[]
