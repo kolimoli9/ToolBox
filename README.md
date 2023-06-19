@@ -1,2 +1,3 @@
 # Tool Box:
- a tool for my own use :)
+ identifying new procesess and shutting the down if needed
+ the other features are irrelevant
